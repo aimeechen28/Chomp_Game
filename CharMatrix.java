@@ -75,7 +75,7 @@ public class CharMatrix
                 m[r][c]=fill;
 
             }
-            
+
         }
 
     }
@@ -132,33 +132,44 @@ public class CharMatrix
 
     public static void main (String[] args) {
         CharMatrix matrix = new CharMatrix(3, 4, 'm');
-
-        //program in your test cases here. Invoke methods from the
-        //object called matrix, like this:
-        
-         System.out.println("Testing setCharAt ...");
+        //Row~
+        System.out.println("Number of rows : " + matrix.numRows());
+        //Column~
+        System.out.println("Number of columns : " + matrix.numCols());
+        //charAt~
+        System.out.println("Char at (2,3) is : " + matrix.charAt(2,3));
+        //setCharAt~
+        System.out.println("Testing setCharAt(2,3) ...");
         System.out.println("m before method call:");
         matrix.display();
-        matrix.setCharAt(2,2,'o');
+        matrix.setCharAt(2,3,' ');
         System.out.println("m after method call:");
         matrix.display();
-        
-        System.out.println("Number of rows : " + matrix.numRows());
-        System.out.println("Number of columns : " + matrix.numCols());
-        
-        //System.out.println("Testing fillRect...");
-        //matrix.fillRect(0,0,2,2,'k');
-        //System.out.println("Testing clearRect...");
-        //matrix.clearRect(0,3,2,3);
-        
-       
-        
-        System.out.println("Testing countInRow&&countInColumn...");
+        //isEmpty~
+        System.out.println("Testing isEmpty at (2,3) : " + matrix.isEmpty(2,3));
+        System.out.println("Testing isEmpty at (1,2) : " + matrix.isEmpty(1,2));
+        //FillRect~
+        System.out.println("Testing fillRect(0,0,1,1)...");
+        System.out.println("m before method call:");
+        matrix.display();
+        matrix.fillRect(0,0,1,1,'k');
+        System.out.println("m after method call:");
+        matrix.display();
+        //ClearRect~
+        System.out.println("Testing clearRect(0,3,2,3)...");
+        System.out.println("m before method call:");
+        matrix.display();
+        matrix.clearRect(0,3,2,3);
+        System.out.println("m after method call:");
+        matrix.display();
+        //countInRow~
+        System.out.println("Testing countInRow(0)...");
         System.out.println("Row contains no space: " + matrix.countInRow(0));
+        //countInColumn~
+        System.out.println("Testing countInColumn(0)...");
         System.out.println("Column contains no space: " + matrix.countInCol(0));
     }
 
 }
-
 
 
